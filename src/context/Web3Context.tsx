@@ -19,10 +19,10 @@ createWeb3Modal({
     metadata,
     wagmiConfig,
     projectId,
-    themeMode:"light",
-    themeVariables:{
+    themeMode: "light",
+    themeVariables: {
         "--w3m-border-radius-master": "3px",
-
+        "--w3m-accent": "#ec50ab"
     }
 })
 

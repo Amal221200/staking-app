@@ -21,7 +21,7 @@ export default function RootLayout({
   const initialState = cookieToInitialState(wagmiConfig, headers().get('cookie'));
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <Web3Context initialState={initialState}>
           {children}
