@@ -3,7 +3,7 @@ import StakingForm from "./StakingForm"
 const Main = () => {
   return (
     <main className="h-[60dvh] sm:h-[80dvh]">
-      <div className="flex h-full bg-white/20 bg-blend-overlay sm:bg-gradient sm:bg-contain sm:bg-left sm:bg-no-repeat sm:p-3">
+      <div className="flex h-full bg-white/20 bg-blend-overlay sm:bg-gradient sm:bg-contain sm:bg-center sm:bg-no-repeat sm:p-3">
         <div className="hidden h-full flex-1 items-center justify-start sm:flex">
           <div className="">
             <h1 className="text-xl font-semibold md:text-3xl">Welcome to Staking App</h1>

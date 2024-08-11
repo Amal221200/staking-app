@@ -2,16 +2,17 @@
 import React, { ComponentProps } from 'react'
 import PrimaryButton from './PrimaryButton'
 import { useAccount } from 'wagmi'
+import { cn } from '@/lib/utils'
 
 interface ClaimRewardButtonProps extends ComponentProps<"button"> {
 
 }
 
-const ClaimRewardButton = ({ disabled, ...props }: ClaimRewardButtonProps) => {
+const ClaimRewardButton = ({ className, ...props }: ClaimRewardButtonProps) => {
   const { isConnected } = useAccount()
-  
+
   return (
-    <PrimaryButton disabled={!isConnected} className='disabled:cursor-not-allowed' {...props}>
+    <PrimaryButton disabled={!isConnected} className={cn('disabled:cursor-not-allowed', className)} {...props}>
       Claim Reward
     </PrimaryButton>
   )

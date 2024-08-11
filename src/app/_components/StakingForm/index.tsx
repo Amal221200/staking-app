@@ -4,6 +4,7 @@ import { useState } from "react";
 import ClaimRewardButton from "@/components/buttons/ClaimRewardButton"
 import StakeForm from "./StakeForm";
 import WithdrawForm from "./WithdrawForm";
+import { cn } from "@/lib/utils";
 
 const StakingForm = () => {
     const [form, setForm] = useState<'stake' | 'withdraw'>('stake');
@@ -11,10 +12,10 @@ const StakingForm = () => {
     return (
         <div>
             <div className="flex items-center justify-center gap-x-2">
-                <button type="button" className="rounded-sm bg-white px-2 py-1" onClick={()=> setForm('stake')}>
+                <button type="button" className={cn("rounded-sm bg-white/10 px-2 py-1", form === 'stake' && 'bg-white')} onClick={()=> setForm('stake')}>
                     Stake Token
                 </button>
-                <button type="button" className="rounded-sm bg-white px-2 py-1" onClick={()=> setForm('withdraw')}>
+                <button type="button" className={cn("rounded-sm bg-white/10 px-2 py-1", form === 'withdraw' && 'bg-white')} onClick={()=> setForm('withdraw')}>
                     Withdraw Token
                 </button>
             </div>
