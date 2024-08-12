@@ -23,7 +23,7 @@ const TransactionsSection = () => {
   return (
     <section className="p-3">
       <h2 className="mb-2 text-2xl font-semibold">All Transactions</h2>
-      <div className="flex flex-wrap justify-center gap-3 md:justify-start">
+      <div className="grid grid-cols-[repeat(auto-fit,200px)] justify-center gap-3 md:justify-start">
           {
             transactions.map(tr => (
               <Transaction key={tr.id} transaction={tr} />
