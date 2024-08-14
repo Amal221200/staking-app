@@ -13,7 +13,7 @@ const ClaimRewardButton = ({ className, ...props }: ClaimRewardButtonProps) => {
 
   return (
     <PrimaryButton disabled={!isConnected} className={cn('disabled:cursor-not-allowed', className)} {...props}>
-      Claim Reward
+      Claim Reward - <span className='text-sm opacity-90'>(2 sBTC)</span>
     </PrimaryButton>
   )
 }

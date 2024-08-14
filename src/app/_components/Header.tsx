@@ -1,6 +1,7 @@
 import ConnectButton from '@/components/ConnectButton'
 
 const Header = () => {
+  
   return (
     <header>
       <div className='flex items-center justify-between px-4 py-2'>

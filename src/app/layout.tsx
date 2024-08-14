@@ -1,7 +1,8 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import Web3Context from "@/context/Web3Context";
+import { Toaster } from "react-hot-toast";
 import { cookieToInitialState } from "wagmi";
 import { headers } from "next/headers";
 import wagmiConfig from "@/blockchain/config";
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Web3Context initialState={initialState}>
           {children}
+          <Toaster />
         </Web3Context>
       </body>
     </html>

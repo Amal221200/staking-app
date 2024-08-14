@@ -9,8 +9,8 @@ export const projectId = process.env.NEXT_PUBLIC_PROJECT_ID
 if (!projectId) throw new Error('Project ID is not defined')
 
 export const metadata = {
-    name: 'AppKit',
-    description: 'AppKit Example',
+    name: 'Staking App',
+    description: 'Staking App',
     url: 'https://web3modal.com', // origin must match your domain & subdomain
     icons: ['https://avatars.githubusercontent.com/u/37784886']
 }
@@ -28,7 +28,7 @@ const wagmiConfig = defaultWagmiConfig({
     transports:{
         [mainnet.id]: http(),
         [sepolia.id]: http(),
-        [bscTestnet.id]: http(),
+        [bscTestnet.id]: http(process.env.NEXT_PUBLIC_RPC_ENDPOINT),
         [bsc.id]: http(),
         [bscGreenfield.id]: http(),
     }

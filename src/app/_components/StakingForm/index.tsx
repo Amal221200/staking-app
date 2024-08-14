@@ -10,7 +10,7 @@ const StakingForm = () => {
     const [form, setForm] = useState<'stake' | 'withdraw'>('stake');
 
     return (
-        <div>
+        <div className="w-[300px]">
             <div className="flex items-center justify-center gap-x-2">
                 <button type="button" className={cn("rounded-sm bg-white/10 px-2 py-1", form === 'stake' && 'bg-white')} onClick={()=> setForm('stake')}>
                     Stake Token
