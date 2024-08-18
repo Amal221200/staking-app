@@ -2,10 +2,14 @@
 import { StakingContextProvider } from '@/context/StakingContext'
 import StakingForm from './StakingForm'
 import { useEffect, useRef, useState } from 'react'
+import { useReadContract } from 'wagmi'
+import { CONTRACT_ADDRESS } from '@/lib/constants'
+import abi from "@/blockchain/contract/StakedBTCAbi.json"
 
 const StakingSection = () => {
   const [time, setTime] = useState('00:00:00:00')
   const ref = useRef<NodeJS.Timeout>()
+  const { data } = useReadContract({ abi, address: CONTRACT_ADDRESS, functionName: "userStakes" })
   useEffect(() => {
     function countDown() {
       ref.current = setInterval(() => {
@@ -44,7 +48,7 @@ const StakingSection = () => {
           <div className='flex flex-1 flex-col items-center justify-center gap-y-3 text-center md:items-start'>
             <div className='w-[200px] rounded-md bg-white p-3'>
               <h4>Total amount stake:</h4>
-              <p>200 sBTC</p>
+              <p>{data ? 0 : 0} sBTC</p>
             </div>
             <div className='w-[200px] rounded-md bg-white p-3'>
               <h4>APY:</h4>

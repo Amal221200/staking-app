@@ -16,7 +16,7 @@ export const metadata = {
 }
 
 // Create wagmiConfig
-const chains = [mainnet, sepolia, bscTestnet, bsc, bscGreenfield] as const
+const chains = [bscTestnet] as const
 const wagmiConfig = defaultWagmiConfig({
     chains,
     projectId,
@@ -26,11 +26,7 @@ const wagmiConfig = defaultWagmiConfig({
         storage: cookieStorage
     }),
     transports:{
-        [mainnet.id]: http(),
-        [sepolia.id]: http(),
         [bscTestnet.id]: http(process.env.NEXT_PUBLIC_RPC_ENDPOINT),
-        [bsc.id]: http(),
-        [bscGreenfield.id]: http(),
     }
 })
 

@@ -1,6 +1,7 @@
 "use client";
-import { useAccount } from "wagmi"
+import { useAccount, useReadContract } from "wagmi"
 import Transaction from "@/components/Transaction"
+import abi from "@/blockchain/contract/StakedBTCAbi.json"
 
 const transactions = [
   {
@@ -21,7 +22,10 @@ const transactions = [
 ]
 
 const TransactionsSection = () => {
-  const { isConnected } = useAccount()
+  const { isConnected,  } = useAccount()
+  const { data } = useReadContract({ abi, address: '0x3aDC6E5D104d8b74CC23389397dA378dbf243301', functionName: "userStakes",  })
+  console.log(data);
+  
   return (
     <section className="p-3">
       <h2 className="mb-2 text-2xl font-semibold">All Transactions</h2>
